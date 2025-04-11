@@ -96,16 +96,16 @@ document.addEventListener('DOMContentLoaded', () => {
             card.className = isListView ? 'list-card' : 'card';
 
             const cleanDescription = hotel.description.replace(/<\/?[^>]+(>|$)/g, "");
-            const starsRaw = String(hotel.stars || "");
-            console.log(hotel.stars);
-            const stars = starsRaw.match(/\d+/)?.[0] || 0;
 
             card.innerHTML = isListView ? `
       ${isFavorite ? `<div class="favorite-label">❤</div>` : ''}
       <img src="${hotel.image}" alt="${hotel.name}" />
       <div class="card-content">
         <h3>${hotel.name}</h3>
-        <div class="stars">${'★'.repeat(stars)}</div>
+        <div class="info-row">
+        <span class="stars">${'★'.repeat(hotel.stars)}</span>
+        <span class="city">${hotel.city}</span>
+        </div>
         <p class="truncate">${cleanDescription}</p>
         <div class="card-actions">
         <button class="info-button" data-id="${hotel.id}">Ver más</button>
@@ -118,7 +118,10 @@ document.addEventListener('DOMContentLoaded', () => {
         <img src="${hotel.image}" alt="${hotel.name}" />
       <div class="card-content">
         <h3>${hotel.name}</h3>
-        <div class="stars">${'★'.repeat(stars)}</div>
+        <div class="info-row">
+        <span class="stars">${'★'.repeat(hotel.stars)}</span>
+        <span class="city">${hotel.city}</span>
+        </div>
         <p class="truncate">${cleanDescription}</p>
         <div class="card-actions">
         <button class="info-button" data-id="${hotel.id}">Ver más</button>
@@ -146,7 +149,10 @@ document.addEventListener('DOMContentLoaded', () => {
         <h2>${hotel.name}</h2>
         <img src="${hotel.image}" alt="${hotel.name}" />
         <p>${hotel.description}</p>
-        <div class="stars">${'★'.repeat(stars)}</div>
+        <div class="info-row">
+        <span class="stars">${'★'.repeat(hotel.stars)}</span>
+        <span class="city">${hotel.city}</span>
+        </div>
     `;
 
         modal.classList.remove('hidden');

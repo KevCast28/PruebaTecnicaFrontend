@@ -178,8 +178,21 @@ button:hover {
     text-overflow: ellipsis;
 }
 
+.info-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.city {
+    font-size: 1rem;
+    color: #555;
+}
+
 .stars {
     color: gold;
+    font-size: 18px;
 }
 
 .favorite-label {
