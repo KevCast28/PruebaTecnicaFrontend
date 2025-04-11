@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Hoteles</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <header class="header-bar">
+        <h1 class="title">Catálogo de Hoteles</h1>
+        <div class="filters-container">
+            <div class="filters-bar">
+                <div class="search-section">
+                    <input type="text" id="searchInput" placeholder="Buscar hoteles..">
+                    <button class="search-btn" id="searchButton">Buscar</button>
+                </div>
+            </div>
+
+            <label class="fav-label">
+                <input type="checkbox" id="favoritesOnly">Sólo favoritos
+            </label>
+
+            <div class="selects-section">
+                <div class="sort-section">
+                    <label for="sortBy">Ordenar por:</label>
+                    <select id="sortBy">
+                        <option value="default">Por defecto</option>
+                        <option value="ratingAsc">Ascendente</option>
+                        <option value="ratingDesc">Descendente</option>
+                    </select>
+                </div>
+
+
+                <div class="filters">
+                    <label for="categoryFilter">Filtrar por categoría:</label>
+                    <select id="categoryFilter" name="categoryFilter">
+                        <option value="all">Todos</option>
+                        <option value="1">1 estrella</option>
+                        <option value="2">2 estrellas</option>
+                        <option value="3">3 estrellas</option>
+                        <option value="4">4 estrellas</option>
+                        <option value="5">5 estrellas</option>
+                    </select>
+
+                    <button class="toggle-btn" id="toggleView">Cambiar vista</button>
+                </div>
+            </div>
+        </div>
+        <div id="counter">Mostrando 0 de 0 hoteles</div>
+    </header>
+
+    <main>
+        <div id="hotelList" class="hotel-list"></div>
+    </main>
+
+    <div id="hotelModal" class="modal hidden">
+        <div class="modal-content">
+            <span id="closeModal" class="close">&times;</span>
+            <div id="modalDetails"></div>
+        </div>
+    </div>
+
+    <script src="/assets/app.js"></script>
+</body>
+
+</html>
